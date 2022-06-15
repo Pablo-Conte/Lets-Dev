@@ -5,12 +5,106 @@
     <link rel="icon" type="image/svg+xml" href="/src/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <div id="root">
      
     </div>
     <script type="module" src="/src/main.tsx"></script>
+
+    <div id="container">
+      <h1>Formulário 2º Edição</h1>
+      <h2>Seja bem-vindo(a) ao primeiro desafio de sua jornada de aprendizado!</h2>
+      <p id="instrucao">Preencha corretamente os campos abaixo para ingressar nessa SUPER JORNADA com o time Paipe</p>
+
+      <img src="src/imagens/MicrosoftTeams-image.png" alt="Logo da Let's dev">
+
+      <hr/>
+
+      <form onsubmit="enviarFormulario()">
+          <p id="aviso">
+              <strong>ATENÇÃO: </strong> os campos contendo (*) são de prenchimento obrigatório!
+          </p>
+          <div class="row">
+              <div class="column-input input-text">
+                  <label>Nome Completo: *</label>
+                  <input 
+                      type="text"
+                      name="nome"
+                      placeholder="Dígite seu nome aqui"
+                      required
+                  />
+              </div>
+              <div class="column-input">
+                  <label>Idade:</label>
+                  <input 
+                      type="number"
+                      name="idade"
+                      placeholder="Dígite sua idade aqui"
+                  />
+              </div>
+          </div>
+          
+          <div class="row">
+              <div class="column-input select">
+                  <label for="ocupacao">Ocupação:</label>
+                  <select name="ocupacao">
+                      <option>Selecione sua ocupação</option>
+                      <option>Estudante</option>
+                      <option>Trabalhador CLT</option>
+                      <option>Trabalhador CNPJ</option>
+                      <option>Autônomo</option>
+                      <option>Outros</option>
+                      </select>
+              </div>
+              <div class="column-input">
+                  <label>Área de Preferência</label>
+                  <div class="row" style="gap: 25px">
+                      <div class="row-selectors">
+                          <input type="radio" id="front" name="area-preferencia" value="Front-end" checked>
+                          <label for="front">Front-end</label>
+                          
+                          <input type="radio" id="back" name="area-preferencia" value="Back-end">
+                          <label for="back">Back-end</label>
+                          
+                          <input type="radio" id="full" name="area-preferencia" value="Full-stack">
+                          <label for="full">Full-Stack</label>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          
+          
+          <div class="column-input">
+              <label>Anexar Currículo:</label>
+              <input type="file" name="curriculo">
+          </div>
+
+
+          <div class="column-input" style="margin-bottom: 50px">
+              <label>Descrição do Perfil do usuário:</label>
+              <textarea 
+                  name="descricao-perfil" 
+                  placeholder="Nos fale um pouco sobre o seu perfil pessoal e profissional">
+              </textarea>  
+          </div>
+
+          <div class="column-input" style="margin-bottom: 115px">
+              <div class="row-selectors">
+                  <input type="checkbox" name="receber-email" id="receber-email">
+                  <label for="receber-email">
+                      Desejo receber notificações sobre vagas por e-mail
+                  </label>
+              </div>
+          </div>
+
+          <div class="row" style="justify-content: space-between">
+              <button onclick="cancelar()">Cancelar</button>
+              <input type="submit" value="Enviar">
+          </div>
+      </form>
+  </div>
 
   </body>
 </html>

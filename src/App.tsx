@@ -35,10 +35,7 @@ function MeuSite() {
 
   return (
     <div>
-      <Titulo titulo="Home"/>
-
-      <MeuBotao label="Botão 1"/>
-      <MeuBotao label="Botão 2"/>
+      
     </div>
 
   );
