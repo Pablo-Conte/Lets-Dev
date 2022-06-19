@@ -1,56 +1,142 @@
-import React from 'react'
-import Titulo from './componentes/Titulo'
+import React, { FormEvent } from "react";
+
 
 
 function MeuSite() {
 
-  // var titulo: string = "Olá mundo!"    -> usa-se como variável dentro do return do App, utilizando "{var_aqui}"
-  // ou
-  // var titulo: string = "Olá mundo!"
-  
-  /*function renderizarTitulo(){
-    return titulo + " Seja Bem-vindo(a)" //retorna o conteúdo da variável titulo criada anteriormente + o que quisermos
-  } */  // usa-se {nomefunção()}
+    function tagPorNome(nomeTag: string, isRadioButton: boolean = false) {
+        const tag = document.getElementsByName(nomeTag);
 
+        if (isRadioButton) {
+            for (let pos = 0; pos < tag.length; pos++) {
+                if (tag[pos].checked) return tag[pos];
+            }
+        } else return tag[0];
+    }
 
-  function minhaFuncao(){
-    alert("Opá!")
-  }
+    function enviarFormulario(event: FormEvent) {
+        event.preventDefault();
 
-  const disparaAlert = (label: string) => {
-    alert(label)
-  }
+        const nome = tagPorNome("nome")?.value;
+        const idade = tagPorNome("idade")?.value;
+        const ocupacao = tagPorNome("ocupacao")?.value;
+        const areaPreferencia = tagPorNome("area-preferencia", true)?.value;
+        const curriculo = tagPorNome("curriculo");
+        const descricaoPerfil = tagPorNome("descricao-perfil")?.value;
+        const receberEmail = tagPorNome("receber-email")?.value;
 
-  function MeuBotao(props: any){
-    //const label = props.label            -> essa e a sintaxe de baixo são iguais
+        const mensagem = `${nome}, tem ${idade} anos e atualmente é ${ocupacao}. Se ingressar no mundo do desenvolvimento, tem interesse na area de ${areaPreferencia}.
+    
+    Em sua descrição de perfil consta: "${descricaoPerfil}"
 
-    const {label} = props;
+    Deseja receber e-mail: ${receberEmail ? "Sim" : "Não"}
 
-    return(
-      <button onClick={() => disparaAlert(label)}>
-        {label}
-      </button>
-    )
-  }
+    Curriculo: ${curriculo ? curriculo.files[0].name : "Não informado"}
+    
+    `;
+        alert(mensagem);
+    }
 
-  return (
-    <div>
-      
-    </div>
+    const cancelar = (event: FormEvent) => {
+        event.preventDefault();
+        alert("Cancelando...")
+    }
 
-  );
+    return (
+        <div id="container">
+
+            <h1>Formulário 2º Edição</h1>
+            <h2>Seja bem-vindo(a) ao primeiro desafio de sua jornada de aprendizado!</h2>
+            <p id="instrucao">Preencha corretamente os campos abaixo para ingressar nessa SUPER JORNADA com o time Paipe</p>
+
+            <img src="MicrosoftTeams-image.png" alt="Logo da Let's dev" />
+
+            <hr></hr>
+
+            <form onSubmit={enviarFormulario}>
+                <p id="aviso">
+                    <strong>ATENÇÃO: </strong> os campos contendo (*) são de prenchimento obrigatório!
+                </p>
+
+                <div className="row">
+                    <div className="column-input input-text">
+                        <label>Nome Completo: *</label>
+                        <input
+                            type="text"
+                            name="nome"
+                            placeholder="Dígite seu nome aqui"
+                            required
+                        />
+                    </div>
+                    <div className="column-input">
+                        <label>Idade:</label>
+                        <input
+                            type="number"
+                            name="idade"
+                            placeholder="Dígite sua idade aqui"
+                        />
+                    </div>
+                </div>
+
+                <div className="row">
+                    <div className="column-input select">
+                        <label>Ocupação:</label>
+                        <select name="ocupacao">
+                            <option>Selecione sua ocupação</option>
+                            <option>Estudante</option>
+                            <option>Trabalhador CLT</option>
+                            <option>Trabalhador CNPJ</option>
+                            <option>Autônomo</option>
+                            <option>Outros</option>
+                        </select>
+                    </div>
+                    <div className="column-input">
+                        <label>Área de Preferência</label>
+                        <div className="row" style={{ gap: '25px' }}>
+                            <div className="row-selectors">
+                                <input type="radio" id="front" name="area-preferencia" value="Front-end" checked />
+                                <label htmlFor="front">Front-end</label>
+
+                                <input type="radio" id="back" name="area-preferencia" value="Back-end" />
+                                <label htmlFor="back">Back-end</label>
+
+                                <input type="radio" id="full" name="area-preferencia" value="Full-stack" />
+                                <label htmlFor="full">Full-Stack</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="column-input">
+                    <label>Anexar Currículo:</label>
+                    <input type="file" name="curriculo" />
+                </div>
+
+                <div className="column-input" style={{ marginBottom: '50px' }}>
+                    <label>Descrição do Perfil do usuário:</label>
+                    <textarea
+                        name="descricao-perfil"
+                        placeholder="Nos fale um pouco sobre o seu perfil pessoal e profissional">
+                    </textarea>
+                </div>
+
+                <div className="column-input" style={{ marginBottom: '115px' }}>
+                    <div className="row-selectors">
+                        <input type="checkbox" name="receber-email" id="receber-email" />
+                        <label htmlFor="receber-email">
+                            Desejo receber notificações sobre vagas por e-mail
+                        </label>
+                    </div>
+                </div>
+
+                <div className="row" style={{justifyContent: 'space-between'}}>
+                    <button onClick={cancelar}>Cancelar</button>
+                    <input type="submit" value="Enviar" />
+                </div>
+
+            </form>
+        </div>
+    );
 }
 
 export default MeuSite;
-
-
-
-
-
-//1° letra maiúsculo quer dizer que tu cria um componente.
-//2° letra minúscula quer dizer que tu cria uma função normal que vai retornar algo.
-//class = className
-//onclick = onClick
-//funcao(){ } = const funcao = () => { }
-//function MeuComponente(){ return <div/>} 
-//function MeuComponente = () => {return <div/>}
