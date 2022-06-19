@@ -1,5 +1,6 @@
-import React, { FormEvent } from "react";
-
+import { FormEvent } from "react";
+import './styles.css';
+import Logo from "./imagens/MicrosoftTeams-image.png";
 
 
 function MeuSite() {
@@ -49,7 +50,7 @@ function MeuSite() {
             <h2>Seja bem-vindo(a) ao primeiro desafio de sua jornada de aprendizado!</h2>
             <p id="instrucao">Preencha corretamente os campos abaixo para ingressar nessa SUPER JORNADA com o time Paipe</p>
 
-            <img src="MicrosoftTeams-image.png" alt="Logo da Let's dev" />
+            <img src={Logo} alt="Logo da Let's dev" />
 
             <hr></hr>
 
