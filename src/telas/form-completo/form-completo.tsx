@@ -51,7 +51,7 @@ const [receberEmail, setReceberEmail] = useState(false);
 
                 <s.Form onSubmit={enviarFormulario}>
                     <s.Aviso>
-                        <strong>ATENÇÃO: </strong> os campos contendo (*) são de prenchimento obrigatório!
+                        <strong>ATENÇÃO: </strong> os campos contendo (*) são de preenchimento obrigatório!
                     </s.Aviso>
 
                     <Row>
