@@ -13,7 +13,7 @@ const Footer: React.FC = () => {
                 <a href="https://github.com/Pablo-Conte/Lets-Dev" target='_blank'>Repositório GitHub</a>
             </s.Row>
             <s.Column>
-                <p>"O único lugar onde sucessor vem antes do trabalho é no dicionário"</p>
+                <p>"O único lugar onde "sucesso" vem antes do trabalho é no dicionário"</p>
                 <p>Albert Einstein</p>
             </s.Column>
         </s.Footer>
