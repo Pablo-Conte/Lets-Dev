@@ -7,8 +7,28 @@ import {
   InputButton,
 } from "../../componentes";
 import { Logo } from "../../imagens";
+import { useContext, useEffect, useState} from "react";
+import { MyContext } from "../../contexto";
+import axios from "axios"
 
 const Home = () => {
+  console.log("teste")
+  const[minhaFotoDePerfil, setMinhaFotoDePerfil] = useState()
+
+  const usandoFoto = () => {
+    return new Promise((resolve, reject) => {
+        axios.get("https://api.github.com/users/pablo-conte")
+        .then((resposta) => {
+            setMinhaFotoDePerfil(resposta.data.avatar_url)
+        })
+        .catch((erro) => console.log(erro))
+        .finally(() => console.log("Foi"));
+    });
+  };
+  usandoFoto()
+
+  const { setNomeUsuario, nomeUsuario } = useContext(MyContext)
+
   const telas = [
     {
       titulo: "Formulário em HTML e CSS",
@@ -44,11 +64,26 @@ const Home = () => {
     },
   ];
 
+  useEffect(() => {
+    
+    if (!nomeUsuario) {
+      let nomeDoLocalStorage = localStorage.getItem("nomeUsuario")
+      if (nomeDoLocalStorage) {
+        setNomeUsuario(nomeDoLocalStorage)
+      } else {
+        let nome = prompt("Dígite seu nome Maninho: ")
+        setNomeUsuario(nome)
+      } 
+    } else {
+      localStorage.setItem("nomeUsuario", nomeUsuario)
+    }
+  }, [nomeUsuario]);
+
   return (
     <s.Container>
       <Header />
       <s.Banner>
-        <h1>Que prazer te ver aqui, Fulano!</h1>
+        <h1>Que prazer te ver aqui, {nomeUsuario}!</h1>
         <img src={Logo} />
         <h2>
           Seja bem-vindo(a) ao Let’s Dev! O evento que vai transformar sua
@@ -73,20 +108,22 @@ const Home = () => {
         </s.GroupCards>
 
         <TituloSecao titulo="Um pouco sobre mim..." />
-
+        
         <s.Row>
-          <img src={Logo} />
+          <img src={minhaFotoDePerfil} alt="Foto de perfil do Pablo" 
+          style={
+            {
+              height: '300px', 
+              width: 'auto', 
+              border: '7px solid #231f20', 
+              boxShadow: '5px 5px 10px black',
+              borderRadius: '5px'
+              
+            }}/>
           <s.Column>
-            <h3>Pablo</h3>
+            <h3>Pablo Conte Correa</h3>
             <p>
-              Este espaço é destinado à sua descrição de perfil. Conta aqui quem
-              você é, gostos, hobbies e o que achar interessante. Descreve
-              também as características profissionais e o que te motivou a
-              ingressar na área do desenvolviemento de software.
-            </p>
-            <p>
-              Você pode substituir a foto a lado pela sua melhor foto e colocar
-              suas redes nos botões abaixo!
+            Sou uma pessoa super empolgada com a tecnologia e tenho bastante interesse nas áreas de redes, programação back-end e cyber security, tanto que estou cada vez mais tentando melhorar minhas habilidades nestas áreas.
             </p>
             <s.ButtonGroup>
               <InputButton
