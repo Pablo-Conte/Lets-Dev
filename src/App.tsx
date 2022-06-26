@@ -5,10 +5,9 @@ import {
     Promise,
     AsyncAwait,
 
-} from "./telas"
+} from "./telas";
 
 function App() {
-
 
     return (
         

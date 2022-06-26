@@ -1,12 +1,13 @@
 import React from "react"
+import Axios from "axios"
 
 const Callback: React.FC = () => {
-    function printaNome(nome: String, callback: () => void) {
+    function printaNomeESobrenome(nome: String, callback: () => void) {
         console.log(nome);
         callback();
     }
 
-    printaNome("João", () => {
+    printaNomeESobrenome("João", () => {
         console.log("Silva")
     })
 
