@@ -1,7 +1,27 @@
 import * as s from "./styled-consumindo-apis";
-import { ColumnInput, Footer, Header, InputButton } from "../../componentes";
+import { ColumnInput, Footer, Header, InputButton, Label } from "../../componentes";
+import axios from "axios";
+import React, { useState } from "react";
+
+
 
 const ConsumindoApis = () => {
+
+  const [nomeEstado, setNomeEstado] = useState()
+  const enviarCep = () => {
+
+    return new Promise((resolve, reject) => {
+      const cep = document.getElementsByName("cep")[0].value
+      axios.get("https://viacep.com.br/ws/" + cep + "/json/")
+        .then((resposta) => {
+
+          setNomeEstado(resposta.data.localidade + " - " + resposta.data.uf)
+          
+        })
+        .catch((erro) => console.log(erro))
+    });
+  }
+
   return (
     <s.Container>
       <Header />
@@ -17,7 +37,7 @@ const ConsumindoApis = () => {
         <s.Objetivo>
           <strong>Objetivo:</strong> Fazer a conexão com a API do Via CEP usando
           o Axios.
-        </s.Objetivo>
+        </s.Objetivo><br />
 
         <h3>Instruções:</h3>
 
@@ -49,16 +69,16 @@ const ConsumindoApis = () => {
             <label>CEP:</label>
             <input
               type="text"
+              name="cep"
               placeholder="Digite o um CEP (somente números)"
-              value=""
-              onChange={() => {}}
+              onChange={() => { }}
             />
           </ColumnInput>
-          <InputButton type="submit" value="Buscar" onClick={() => {}} />
+          <InputButton type="submit" value="Buscar" onClick={enviarCep} />
         </s.Row>
 
         <span>
-          <strong>Cidade pesquisada: </strong> fwa fwa
+          <strong>Cidade pesquisada: </strong> {nomeEstado}
         </span>
       </s.Content>
       <Footer />

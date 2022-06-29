@@ -113,6 +113,8 @@ export const Objetivo = styled.p`
   }
 `;
 
+
+
 export const Row = styled.div`
   display: flex;
   align-items: flex-end;
@@ -125,4 +127,17 @@ export const Column = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
+`;
+
+export const Form = styled.form`
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    
+    textarea{
+        min-height: 100px;
+        max-height: 200px;
+        min-width: 50%;
+        max-width: 100%;
+    }
 `;

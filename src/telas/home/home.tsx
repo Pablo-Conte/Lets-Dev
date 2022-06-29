@@ -118,7 +118,6 @@ const Home = () => {
               border: '7px solid #231f20', 
               boxShadow: '5px 5px 10px black',
               borderRadius: '5px'
-              
             }}/>
           <s.Column>
             <h3>Pablo Conte Correa</h3>
