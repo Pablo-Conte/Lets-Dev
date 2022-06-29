@@ -8,6 +8,7 @@ interface InputButtonProps {
     onChange?: (event: any) => void;
     outLined?: boolean;
     onClick?: (event: FormEvent) => void;
+    title?: string
 }
 
 const InputButton = ({
@@ -17,6 +18,7 @@ const InputButton = ({
     onChange,
     outLined,
     onClick,
+    title
 }: InputButtonProps) => {
     return (
         <s.InputButton
@@ -26,6 +28,7 @@ const InputButton = ({
             value = {value}
             onChange = {onChange}
             onClick = {onClick}
+            title = {title}
         />
     );
 };

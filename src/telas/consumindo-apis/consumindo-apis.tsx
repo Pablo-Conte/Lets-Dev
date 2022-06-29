@@ -14,9 +14,7 @@ const ConsumindoApis = () => {
       const cep = document.getElementsByName("cep")[0].value
       axios.get("https://viacep.com.br/ws/" + cep + "/json/")
         .then((resposta) => {
-          alert(resposta.data.localidade + " - " + resposta.data.uf)
           setNomeEstado(resposta.data.localidade + " - " + resposta.data.uf)
-          
         })
         .catch((erro) => console.log(erro))
     });

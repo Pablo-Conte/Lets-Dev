@@ -129,14 +129,17 @@ const Home = () => {
                 outLined
                 type="button"
                 value="LinkedIn"
+                title="Ver perfil Linkedin"
                 onClick={() => {
                   //Aqui vai o seu perfil do linkedIn
                   window.open("https://www.linkedin.com/in/pablo-conte-correa-2b97a7201/", "_blank");
+               
                 }}
               />
               <InputButton
                 type="submit"
                 value="Ver perfil"
+                title="Ver perfil GitHub"
                 onClick={() => {
                   //Aqui vai o seu perfil do GitHub
                   window.open("https://github.com/pablo-conte", "_blank");
