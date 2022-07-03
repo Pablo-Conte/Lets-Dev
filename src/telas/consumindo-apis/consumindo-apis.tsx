@@ -5,19 +5,22 @@ import React, { useState } from "react";
 
 
 
+interface localidade {
+  localidade?: string;
+  uf?: string
+}
+
 const ConsumindoApis = () => {
 
-  const [nomeEstado, setNomeEstado] = useState()
-  const enviarCep = () => {
+  const [pegarCEP, setCEP]: any = useState()
+  const [localidade, setLocalidade] = useState<localidade>()
+  const enviarCep: any = (cep: String) => {
 
-    return new Promise((resolve, reject) => {
-      const cep = document.getElementsByName("cep")[0].value
-      axios.get("https://viacep.com.br/ws/" + cep + "/json/")
-        .then((resposta) => {
-          setNomeEstado(resposta.data.localidade + " - " + resposta.data.uf)
-        })
-        .catch((erro) => console.log(erro))
-    });
+    const URL = "https://viacep.com.br/ws"
+
+    axios.get(`${URL}/${cep}/json `)
+    .then((resposta) => {setLocalidade(resposta.data)})
+    .catch((erro) => {console.log(erro)})
   }
 
   return (
@@ -68,15 +71,17 @@ const ConsumindoApis = () => {
             <input
               type="text"
               name="cep"
+              value={pegarCEP}
               placeholder="Digite o um CEP (somente números)"
-              onChange={() => { }}
+              onChange={(evento) => setCEP(evento.target.value)}
+              maxLength={8}
             />
           </ColumnInput>
-          <InputButton type="submit" value="Buscar" onClick={enviarCep} />
+          <InputButton type="submit" value="Buscar" onClick={() => enviarCep(pegarCEP)} />
         </s.Row>
 
         <span>
-          <strong>Cidade pesquisada: </strong> {nomeEstado}
+          <strong>Cidade pesquisada: </strong> {localidade?.localidade} - {localidade?.uf}
         </span>
       </s.Content>
       <Footer />
