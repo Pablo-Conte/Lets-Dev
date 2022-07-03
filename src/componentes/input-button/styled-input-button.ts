@@ -28,6 +28,10 @@ export const InputButton = styled.input<InputButtonProps>`
         }
     }
 
+    &[name = "sty"] {
+        margin-top: 2rem;
+    }
+
     &::-webkit-file-upload-button,
     &.outlined {
         border: 1px solid #7d2eba;
@@ -42,4 +46,5 @@ export const InputButton = styled.input<InputButtonProps>`
             color: white;
         }
     }
+    
 `;

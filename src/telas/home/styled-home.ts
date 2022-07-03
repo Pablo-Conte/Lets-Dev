@@ -27,7 +27,7 @@ export const Banner = styled.div`
   h1 {
     font-style: italic;
     font-weight: 700;
-    font-size: 48px;
+    font-size: 3rem;
     line-height: 59px;
     text-align: center;
     color: #ffffff;
@@ -46,12 +46,12 @@ export const Banner = styled.div`
   }
 
   h2 {
-    font-size: 24px;
+    font-size: 1.5rem;
     text-align: center;
   }
 
   p {
-    font-size: 16px;
+    font-size: 1rem;
     text-align: center;
     margin-top: 10px;
   }
@@ -71,14 +71,16 @@ export const Row = styled.div`
   gap: 30px;
 
   img {
-    width: 50%;
+    max-width: 100%;
+    max-height: 100%;
   }
 
-  @media (max-width: 300px) {
+  @media (max-width: 767px) {
     flex-wrap: wrap;
-
+    
     img {
       width: 100%
+      
     }
   }
 `;
@@ -90,19 +92,27 @@ export const Column = styled.div`
 
   h3 {
     font-weight: 600;
-    font-size: 28px;
+    font-size: 1.75rem;
     line-height: 26px;
     color: #7d2eba;
   }
 
   p {
     font-weight: 400;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 26px;
     color: #201e1f;
   }
 `;
 
 export const ButtonGroup = styled.div`
+  display: flex;
   width: 100%;
+
+  @media (max-width: 767px) {
+    flex-wrap: wrap;
+    
+  }
+
 `;
+

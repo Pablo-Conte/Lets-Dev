@@ -110,7 +110,7 @@ const Home = () => {
         <TituloSecao titulo="Um pouco sobre mim..." />
         
         <s.Row>
-          <img src={minhaFotoDePerfil} alt="Foto de perfil do estudante Pablo - obs: ele é bonitão" 
+          <img src={minhaFotoDePerfil} alt="Foto de perfil do estudante Pablo - obs: ele é" 
           style={
             {
               height: '300px', 
@@ -122,7 +122,7 @@ const Home = () => {
           <s.Column>
             <h3>Pablo Conte Correa</h3>
             <p>
-            Sou uma pessoa super empolgada com a tecnologia e tenho bastante interesse nas áreas de redes, programação back-end e cyber security, tanto que estou cada vez mais tentando melhorar minhas habilidades nestas áreas.
+            Sou uma pessoa super empolgada com a tecnologia e tenho bastante interesse nas áreas de redes, programação back-end e cyber security, tanto que estou cada vez mais tentando melhorar minhas habilidades nestas áreas. Atualmente estou estudando bastante React e NodeJS, tanto na escola técnica onde estudo e tanto neste curso da Let's Dev
             </p>
             <s.ButtonGroup>
               <InputButton
@@ -130,6 +130,7 @@ const Home = () => {
                 type="button"
                 value="LinkedIn"
                 title="Ver perfil Linkedin"
+                name="sty"
                 onClick={() => {
                   //Aqui vai o seu perfil do linkedIn
                   window.open("https://www.linkedin.com/in/pablo-conte-correa-2b97a7201/", "_blank");
@@ -140,6 +141,7 @@ const Home = () => {
                 type="submit"
                 value="Ver perfil"
                 title="Ver perfil GitHub"
+                name="sty"
                 onClick={() => {
                   //Aqui vai o seu perfil do GitHub
                   window.open("https://github.com/pablo-conte", "_blank");
