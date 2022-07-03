@@ -8,6 +8,6 @@
   <li>JavaScript
   <li>React
   <ul>
-    <li>Hooks (Estados, Contextos etc)
+    <li>Hooks (States, Context, Effect)
     <li>Styled components
   </ul>
