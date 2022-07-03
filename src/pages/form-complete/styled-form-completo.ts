@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Image = styled.img`
     flex-wrap: wrap;
-    font-size: 16px;
+    width: 100%;
 `;
 
 export const Container = styled.div`

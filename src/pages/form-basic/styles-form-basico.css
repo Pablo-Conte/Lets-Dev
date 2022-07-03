@@ -1,6 +1,7 @@
 body {
     display: flex;
     align-items: center;
+    width: 100%;
 }
 
 #container{
@@ -9,6 +10,7 @@ body {
     align-items: center;
     max-width: 1200px;
     padding: 90px;
+
 }
 
 #container h1{
@@ -138,7 +140,7 @@ form button {
         
     }
     img {
-        width: 300px;
+        width: 100%;
     }
 
 }
