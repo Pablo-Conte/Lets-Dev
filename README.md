@@ -8,6 +8,10 @@
   <li>JavaScript
   <li>React
   <ul>
+    <li>Components
     <li>Hooks (States, Context, Effect)
     <li>Styled components
+    <li>Props
+    <li>API
+    <li>Routes
   </ul>
