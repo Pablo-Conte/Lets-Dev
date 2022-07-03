@@ -1,6 +1,6 @@
 body {
     display: flex;
-    
+    align-items: center;
 }
 
 #container{
@@ -116,29 +116,3 @@ form button {
     padding: 5px 20px;
 }
 
-@media (max-width: 650px){
-    img {
-        width: 100%;
-    }
-}
-
-@media (max-width: 565px){
-    
-    div {
-        flex-wrap: wrap;
-        font-size: 20px;
-    }
-    div.row-selectors {
-        flex-direction: column;
-        
-    }
-
-    div.row {
-        gap: 60px
-        
-    }
-    img {
-        width: 300px;
-    }
-
-}
