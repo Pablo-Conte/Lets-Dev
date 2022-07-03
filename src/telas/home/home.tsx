@@ -27,7 +27,7 @@ const Home = () => {
   };
   usandoFoto()
 
-  const { setNomeUsuario, nomeUsuario } = useContext(MyContext)
+  const {nomeUsuario, setNomeUsuario } = useContext(MyContext)
 
   const telas = [
     {
@@ -84,7 +84,7 @@ const Home = () => {
       <Header />
       <s.Banner>
         <h1>Que prazer te ver aqui, {nomeUsuario}!</h1>
-        <img src={Logo} />
+        <img src={Logo} alt="Tela mostrando o logo do let's dev, programa da Paipe"/>
         <h2>
           Seja bem-vindo(a) ao Let’s Dev! O evento que vai transformar sua
           carreira.
@@ -110,7 +110,7 @@ const Home = () => {
         <TituloSecao titulo="Um pouco sobre mim..." />
         
         <s.Row>
-          <img src={minhaFotoDePerfil} alt="Foto de perfil do Pablo" 
+          <img src={minhaFotoDePerfil} alt="Foto de perfil do estudante Pablo - obs: ele é bonitão" 
           style={
             {
               height: '300px', 

@@ -73,6 +73,14 @@ export const Row = styled.div`
   img {
     width: 50%;
   }
+
+  @media (max-width: 300px) {
+    flex-wrap: wrap;
+
+    img {
+      width: 100%
+    }
+  }
 `;
 
 export const Column = styled.div`
