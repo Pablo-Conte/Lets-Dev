@@ -1,3 +1,8 @@
+body {
+    display: flex;
+    align-items: center;
+}
+
 #container{
     display: flex;
     flex-direction: column;
@@ -73,7 +78,8 @@ button {
 div.row{
     display: flex;
     width: 100%;
-    gap: 60px
+    gap: 60px;
+    
 }
 
 .column-input.select{
@@ -100,8 +106,8 @@ form .row-selectors label {
 }
 
 form textarea{
-    min-height: 100px;
-    max-height: 200px;
+    min-height: 6.25rem;
+    max-height: 12.5rem;
     min-width: 50%;
     max-width: 100%;
 }
@@ -110,3 +116,28 @@ form button {
     padding: 5px 20px;
 }
 
+@media (max-width: 650px){
+    img {
+        width: 100%;
+    }
+}
+
+@media (max-width: 565px){
+    
+    div {
+        flex-wrap: wrap;
+        font-size: 20px;
+    }
+    div.row-selectors {
+        flex-direction: column;
+        
+    }
+
+    div.row {
+        gap: 60px;
+    }
+    img {
+        width: 300px;
+    }
+
+}

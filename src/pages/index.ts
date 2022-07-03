@@ -1,5 +1,5 @@
 import FormBasico from "./form-basic/form-basico";
-import FormCompleto from "./form-complete/form-completo"
+import FormCompleto from "./form-complete/form-complete"
 import Callback from "./call-api/callback";
 import Promise from "./call-api/promise";
 import AsyncAwait from "./call-api/async-await";

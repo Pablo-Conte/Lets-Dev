@@ -31,19 +31,19 @@ body #root {
 
 }
 
-@media (min-width: 991px){
+@media (max-width: 991px){
     html {
         font-size: 95%
     }
 }
 
-@media (min-width: 767px){
+@media (max-width: 767px){
     html {
         font-size: 85%
     }
 }
 
-@media (min-width: 479px){
+@media (max-width: 479px){
     html {
         font-size: 75%
     }
