@@ -46,5 +46,6 @@ export const InputButton = styled.input<InputButtonProps>`
             color: white;
         }
     }
+
     
 `;

@@ -1,6 +1,6 @@
 body {
     display: flex;
-    align-items: center;
+    
 }
 
 #container{
@@ -134,7 +134,8 @@ form button {
     }
 
     div.row {
-        gap: 60px;
+        gap: 60px
+        
     }
     img {
         width: 300px;

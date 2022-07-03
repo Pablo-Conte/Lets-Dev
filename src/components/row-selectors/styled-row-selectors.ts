@@ -4,6 +4,7 @@ export const RowSelectors = styled.div`
     display: flex;
     align-items: center;
     gap: 10px;
+    
 
     input[type="radio"]{
         width: 25px;
@@ -20,4 +21,6 @@ export const RowSelectors = styled.div`
     label {
         font-weight: 400;
     }
+
+    
 `;

@@ -34,4 +34,5 @@ export const ColumnInput = styled.div`
 
         cursor: pointer;
     }
+
 `;

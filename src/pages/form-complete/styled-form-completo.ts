@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 
 export const Image = styled.img`
-    width: 100%;
+    flex-wrap: wrap;
+    font-size: 16px;
 `;
 
 export const Container = styled.div`
@@ -49,3 +50,4 @@ export const Aviso = styled.p`
         color: #bd041a;
     }
 `;
+
