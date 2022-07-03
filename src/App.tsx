@@ -5,11 +5,12 @@ import {
     Promise,
     AsyncAwait,
     Home,
-    ConsumindoApis
-} from "./telas";
+    ConsumindoApis,
+    SobrePaipers
+} from "./pages";
 
 import {BrowserRouter, Routes, Route} from "react-router-dom"
-import { MyContext } from "./contexto";
+import { MyContext } from "./context";
 import { useState } from "react";
 
 function App() {
@@ -21,9 +22,10 @@ function App() {
             <BrowserRouter>
                 <Routes>
                     <Route path="/" element={<Home/>}/>
-                    <Route path="/form-basico" element={<FormBasico/>}></Route>
-                    <Route path="/form-completo" element={<FormCompleto/>}></Route>
-                    <Route path="/consumindo-apis" element={<ConsumindoApis/>}></Route>
+                    <Route path="/form-basico" element={<FormBasico/>}/>
+                    <Route path="/form-completo" element={<FormCompleto/>}/>
+                    <Route path="/consumindo-apis" element={<ConsumindoApis/>}/>
+                    <Route path="/sobre-paipers" element={<SobrePaipers/>}/>
                 </Routes>
             </BrowserRouter>
         </MyContext.Provider>

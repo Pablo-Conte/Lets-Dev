@@ -1,8 +1,8 @@
 import React, { FormEvent, useEffect, useState } from 'react';
 import * as s from "./styled-form-completo"
-import { LogoExtended } from "../../imagens"
-import Titulo from '../../componentes/Titulo';
-import { Row, ColumnInput, Label, RowSelectors, InputButton, Footer } from '../../componentes';
+import { LogoExtended } from "../../images"
+import Titulo from '../../components/Titulo';
+import { Row, ColumnInput, Label, RowSelectors, InputButton, Footer } from '../../components';
 
 const FormCompleto: React.FC = () => {
 const [nome, setNome] = useState("");

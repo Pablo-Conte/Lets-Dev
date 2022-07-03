@@ -5,10 +5,10 @@ import {
   TituloSecao,
   Card,
   InputButton,
-} from "../../componentes";
-import { Logo } from "../../imagens";
+} from "../../components";
+import { Logo } from "../../images";
 import { useContext, useEffect, useState} from "react";
-import { MyContext } from "../../contexto";
+import { MyContext } from "../../context";
 import axios from "axios"
 
 const Home = () => {

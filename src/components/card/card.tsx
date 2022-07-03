@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { Logo } from "../../imagens";
+import { Logo } from "../../images";
 import * as s from "./styled-card";
 
 interface CardProps {

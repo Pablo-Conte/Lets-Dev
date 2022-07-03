@@ -1,4 +1,4 @@
-import { LogoLetsDev, LogoPaipe } from "../../imagens";
+import { LogoLetsDev, LogoPaipe } from "../../images";
 import * as s from "./styled-header";
 
 const Header = () => {

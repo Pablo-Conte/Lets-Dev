@@ -1,6 +1,6 @@
 import React, { FormEvent } from 'react';
 import "./styles-form-basico.css";
-import { Logo } from '../../imagens'
+import { Logo } from '../../images'
 
 // import { Container } from './styles';
 

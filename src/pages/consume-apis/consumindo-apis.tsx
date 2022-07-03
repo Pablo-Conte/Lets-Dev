@@ -1,5 +1,5 @@
 import * as s from "./styled-consumindo-apis";
-import { ColumnInput, Footer, Header, InputButton, Label } from "../../componentes";
+import { ColumnInput, Footer, Header, InputButton, Label } from "../../components";
 import axios from "axios";
 import React, { useState } from "react";
 
